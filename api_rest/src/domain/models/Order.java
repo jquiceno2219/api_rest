@@ -10,9 +10,9 @@ public class Order {
     private LocalDate orderDate;
     private LocalDate deliveryDate;
     private List<Product> products;
-    private Customer customer;
+    private List<Customer> customer;
 
-    public Order(long id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, Customer customer) {
+    public Order(long id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, List<Customer> customer) {
         this.id = id;
         this.status = status;
         this.orderDate = orderDate;
@@ -64,11 +64,11 @@ public class Order {
         this.products = products;
     }
 
-    public Customer getCustomer() {
+    public List<Customer> getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(List<Customer> customer) {
         this.customer = customer;
     }
 

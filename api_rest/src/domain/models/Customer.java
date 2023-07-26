@@ -1,11 +1,12 @@
 package domain.models;
+import domain.enums.CustomerTier;
 
 public class Customer {
     private long id;
     private String name;
-    private Integer tier;
+    private CustomerTier tier;
 
-    public Customer(long id, String name, Integer tier) {
+    public Customer(long id, String name, CustomerTier tier) {
         this.id = id;
         this.name = name;
         this.tier = tier;
@@ -27,11 +28,20 @@ public class Customer {
         this.name = name;
     }
 
-    public Integer getTier() {
+    public CustomerTier getTier() {
         return tier;
     }
 
-    public void setTier(Integer tier) {
+    public void setTier(CustomerTier tier) {
         this.tier = tier;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer " +
+                "id=" + id +
+                "\n {name='" + name + '\'' +
+                "\n tier=" + tier +
+                "} \n ";
     }
 }
