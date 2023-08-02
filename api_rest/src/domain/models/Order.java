@@ -1,23 +1,28 @@
 package domain.models;
 
+import domain.enums.OrderStatus;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import domain.models.Customer;
+import domain.models.Product;
+
 
 public class Order {
     private long id;
-    private String status;
+    private OrderStatus status;
     private LocalDate orderDate;
     private LocalDate deliveryDate;
-    private List<Product> products;
-    private List<Customer> customer;
+    private List<Product> product;
+    private Customer customer;
 
-    public Order(long id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, List<Customer> customer) {
+    public Order(long id, OrderStatus status, LocalDate orderDate, LocalDate deliveryDate, List<Product> product, Customer customer) {
         this.id = id;
         this.status = status;
         this.orderDate = orderDate;
         this.deliveryDate = deliveryDate;
-        this.products = products;
+        this.product = product;
         this.customer = customer;
     }
 
@@ -32,11 +37,11 @@ public class Order {
         this.id = id;
     }
 
-    public String getStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
 
@@ -57,19 +62,30 @@ public class Order {
     }
 
     public List<Product> getProducts() {
-        return products;
+        return product;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProducts(List<Product> product) {
+        this.product = product;
     }
 
-    public List<Customer> getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(List<Customer> customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", status=" + status +
+                ", orderDate=" + orderDate +
+                ", deliveryDate=" + deliveryDate +
+                ", product=" + product +
+                ", customer=" + customer +
+                '}';
+    }
 }

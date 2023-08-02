@@ -1,13 +1,15 @@
 package domain.models;
 import domain.enums.*;
 
+import java.util.stream.Stream;
+
 public class Product {
     private long id;
     private String name;
     private CategoryType category;
-    private Double price;
+    private double price;
 
-    public Product(long id, String name, CategoryType category, Double price) {
+    public Product(long id, String name, CategoryType category, double price) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -38,11 +40,11 @@ public class Product {
         this.category = category;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -54,5 +56,7 @@ public class Product {
                 "\n category=" + category +
                 "\n price=" + price +
                 "} \n" ;
+
     }
+
 }
